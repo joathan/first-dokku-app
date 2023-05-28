@@ -6,7 +6,7 @@ services:
       context: .
     tty: true
     stdin_open: true
-    container_name: first=dokku
+    container_name: first-dokku
     volumes:
       - .:/app
       - gems:/usr/local/bundle
