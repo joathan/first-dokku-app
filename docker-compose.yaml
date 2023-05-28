@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    tty: true
+    stdin_open: true
+    container_name: first=dokku
+    volumes:
+      - .:/app
+      - gems:/usr/local/bundle
+    ports: 
+      - '3000:3000'
+    env_file:
+      - .env
+    command: bash start.sh
+
+volumes:
+  gems:
