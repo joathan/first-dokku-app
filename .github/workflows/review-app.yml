@@ -11,7 +11,7 @@ jobs:
   review_app:
     runs-on: ubuntu-latest
     # only run when a pull request is opened
-    if: github.event_name == 'pull_request' && github.event.action == 'opened' || github.event_name == 'push'
+    if: github.event_name == 'push'
 
     steps:
       - name: Cloning repo
