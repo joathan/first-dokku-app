@@ -22,10 +22,11 @@ jobs:
         with:
           fetch-depth: 0
         
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Setup SSH config
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_CONFIG" > ~/.ssh/config
+          chmod 600 ~/.ssh/config
 
       - name: Push to dokku
         uses: dokku/github-action@master
