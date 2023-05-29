@@ -1,10 +1,11 @@
 ---
 name: 'deploy'
 
-# yamllint disable-line rule:truthy
 on:
-  # onl run this workflow on pull request events
-  pull_request
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
   review_app:
